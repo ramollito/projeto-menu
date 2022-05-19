@@ -11,6 +11,7 @@
     --black: #000;
     --bg-gray: #ddd;
     --light-blue: #1d52ff;
+    --other-blue: #174fbe;
 }
 
 body {
@@ -49,15 +50,46 @@ body {
     display: flex;
 }
 
-.menu li a {
+.menu li {
+    position: relative;
+}
+
+.menu > li a {
     padding: 17px;
     text-decoration: none;
     font-size: 14px;
     color: var(--white);
+    display: block;
     
 }
 
-.menu li a:hover {
+.menu > li:hover {
     background: var(--light-blue);
+}
+
+.menu > li:hover > .submenu, .submenu > li:hover > .submenu  {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background: #1d52ff;
+    min-width: 110%;
+}
+
+.submenu li:hover {
+    background: #174fbe;
+}
+
+.submenu li {
+    position: relative;
+}
+
+.submenu li .submenu {
+    top: 0;
+    left: 100%;
 }
 
